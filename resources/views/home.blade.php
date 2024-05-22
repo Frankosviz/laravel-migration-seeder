@@ -4,7 +4,13 @@
 
 @section('content')
 <main>
-    <h1>Home page</h1>
+    @foreach ($allTrain as $train)
+    <ul>
+        <li>
+            {{ $train->data }}
+        </li>
+    </ul>
+    @endforeach
 </main>
 
 @endsection
