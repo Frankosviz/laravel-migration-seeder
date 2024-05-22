@@ -9,6 +9,43 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-    color: $text-color;
+body {
+    background-color: aqua;
+}
+
+footer {
+    margin-top: 150px;
+    background-color: black;
+    column-gap: 30px;
+    color: white;
+}
+
+footer div ul > li {
+    padding: 10px 0 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+footer div ul > .padding-bottom-50 {
+    font-size: 25px;
+}
+
+#border-bottom {
+    border-bottom: 1px solid white;
+    padding-bottom: 150px;
+}
+
+.end {
+    padding-left: 40px;
+    color: gray;
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.end:hover {
+    color: red;
+}
+
+footer div ul li:hover {
+    color: red;
 }
