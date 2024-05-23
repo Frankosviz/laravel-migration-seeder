@@ -1,4 +1,4 @@
-id,azienda,stazione_di_partenza,stazione_di_arrivo,orario_di_partenza,orario_di_arrivo,codice_treno,numero_carrozze,in_orario,cancellato,data
+azienda,stazione_di_partenza,stazione_di_arrivo,orario_di_partenza,orario_di_arrivo,codice_treno,numero_carrozze,in_orario,cancellato,data
 Ferrovie Italiane,Milano,Napoli,14:45:00,18:30:00,7A9E2B,16,2,1,2024-05-22
 Ferrovie Italiane,Firenze,Napoli,13:30:00,17:15:00,5B6F98,14,3,0,2024-05-22
 Ferrovie Italiane,Milano,Napoli,16:10:00,20:05:00,3C7DFA,17,1,1,2024-05-25

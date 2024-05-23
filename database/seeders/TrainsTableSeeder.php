@@ -15,8 +15,11 @@ class TrainsTableSeeder extends Seeder
      *
      * @return void
      */
-    //     public function run(Faker $faker)
-//      {
+    // Popolo il db con il faker
+
+    public function run(Faker $faker)
+    {
+        //      {
 //         for ($i = 0; $i < 50; $i++) {
 //         $new_train = new Train();
 //         $new_train->azienda = $faker->company();
@@ -33,28 +36,61 @@ class TrainsTableSeeder extends Seeder
 //     }
 //  }
 
-    public function run(Faker $faker)
-    {
+
+        // Popolo il db dal file csv
+
         $path = __DIR__ . '/trains.csv';
-        $data = Help::getCsvData($path);
+        $file_stream = fopen($path, 'r');
+        if ($file_stream === false) {
+            exit('Unable to open file' . $path);
+        }
+        $data = [];
+        while ($row = fgetcsv($file_stream)) {
+            // dd($row);
+            $data[] = $row;
+        }
+        // dd($data);
         foreach ($data as $index => $train) {
             if ($index !== 0) {
                 $new_train = new Train();
-                $new_train->azienda = $train[2];
-                $new_train->stazione_di_partenza = $train[3];
-                $new_train->stazione_di_arrivo = $train[4];
-                $new_train->orario_di_partenza = $train[5];
-                $new_train->orario_di_arrivo = $train[6];
-                $new_train->codice_treno = $train[7];
-                $new_train->numero_carrozze = $train[8];
-                $new_train->in_orario = $train[9];
-                $new_train->cancellato = $train[10];
-                $new_train->data = $train[11];
+                $new_train->azienda = $train[0];
+                $new_train->stazione_di_partenza = $train[1];
+                $new_train->stazione_di_arrivo = $train[2];
+                $new_train->orario_di_partenza = $train[3];
+                $new_train->orario_di_arrivo = $train[4];
+                $new_train->codice_treno = $train[5];
+                $new_train->numero_carrozze = $train[6];
+                $new_train->in_orario = $train[7];
+                $new_train->cancellato = $train[8];
+                $new_train->data = $train[9];
+
                 $new_train->save();
             }
+
         }
+        // public function run(Faker $faker)
+        // {
+        //     $path = __DIR__ . '/trains.csv';
+        //     $data = Help::getCsvData($path);
+        //     foreach ($data as $index => $train) {
+        //         if ($index !== 0) {
+        //             $new_train = new Train();
+        //             $new_train->azienda = $train[2];
+        //             $new_train->stazione_di_partenza = $train[3];
+        //             $new_train->stazione_di_arrivo = $train[4];
+        //             $new_train->orario_di_partenza = $train[5];
+        //             $new_train->orario_di_arrivo = $train[6];
+        //             $new_train->codice_treno = $train[7];
+        //             $new_train->numero_carrozze = $train[8];
+        //             $new_train->in_orario = $train[9];
+        //             $new_train->cancellato = $train[10];
+        //             $new_train->data = $train[11];
+        //             $new_train->save();
+        //         }
+        //     }
+
+        // }
 
     }
 
 }
-
