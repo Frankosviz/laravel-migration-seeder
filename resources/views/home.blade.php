@@ -4,14 +4,13 @@
 
 @section('content')
 <main>
+
     
-        <h1 class="text-center text-primary my-5">Benvenuti in Ferrovie dello Stato</h1>
-        <div class="container">
+    <div class="container-fd f-d-layer">
         <div class="d-flex justify-content-between ">
-            <div class="d-flex flex-column">
-                <a href="{{ route('home') }}" class="btn btn-warning fw-bold">Treni in partenza oggi!</a>
-                <p class="mb-1 text-center fw-bold">(Questo bottone è associato ad una rotta che darà un dettaglio dei
-                    treni in partenza oggi)</p>
+            <div class="d-flex flex-column fd-layer-today">
+                <button class="btn-today btn"><a href="{{ route('home') }}" class="fw-bold fs-4">Treni in partenza
+                        oggi!</a></button>
                 @foreach ($todayTrains as $train)
                     <ul>
                         <li class="fw-bold fs-5">
@@ -26,10 +25,9 @@
                     </ul>
                 @endforeach
             </div>
-            <div class="d-flex flex-column">
-                <a href="{{ route('home') }}" class="btn btn-warning fw-bold">Tutti i treni!</a>
-                <p class="mb-1 text-center fw-bold">(Questo bottone sarà associato ad una rotta che darà un dettaglio di
-                    tutti i treni)</p>
+            <div class="d-flex flex-column fd-layer-all">
+                <button class="btn-all btn"><a href="{{ route('all') }}" class="fw-bold fs-4">Tutti i treni
+                        disponibili!</a></button>
                 @foreach ($allTrains as $train)
                     <ul>
                         <li class="fw-bold fs-5">

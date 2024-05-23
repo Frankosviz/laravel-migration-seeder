@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\GarbageController;
 use App\Http\Controllers\TrainController;
+use App\Http\Controllers\AllController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TrainController::class, 'index'])->name('home');
+Route::get('/garbage', [GarbageController::class, 'index'])->name('garbage');
+Route::get('/all', [AllController::class, 'index'])->name('all');

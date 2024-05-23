@@ -9,24 +9,101 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-body {
-    background-color: aqua;
+.container-fd {
+    background-image: url("../images/sfondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+nav {
+    background-color: black;
+}
+
+nav {
+    a {
+        color: $school-bus-yellow;
+    }
+}
+
+.my-celestine {
+    color: $celestial-blue;
+}
+
+.my-yellow {
+    color: $school-bus-yellow;
+}
+h1 {
+    color: $school-bus-yellow;
+    font-size: 50px;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+        color: $celestial-blue;
+    }
+}
+
+.f-d-layer {
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.btn-today {
+    background-color: $persimmon;
+
+
+    &:hover {
+        color: $celestial-blue;
+    }
+}
+
+.btn-all {
+    background-color: $celestial-blue;
+
+
+    &:hover {
+        background-color: $persimmon;
+    }
+
+}
+
+.fd-layer-today {
+    background-color: rgba(235, 99, 36, 0.5);
+    border-radius: 20px;
+    height: 1000px;
+    margin-right: 10px;
+    width: calc(100% / 2 - 20px);
+    overflow: hidden;
+}
+
+.fd-layer-all {
+    background-color: rgba(57, 156, 237, 0.5);
+    border-radius: 20px;
+    height: 1000px;
+    margin-left: 10px;
+    width: calc(100% / 2 - 20px);
+    overflow: hidden;
 }
 
 footer {
-    margin-top: 150px;
     background-color: black;
     column-gap: 30px;
     color: white;
 }
 
-footer div ul > li {
+footer div ul>li {
     padding: 10px 0 10px 0;
     color: white;
     cursor: pointer;
 }
 
-footer div ul > .padding-bottom-50 {
+footer div ul>.padding-bottom-50 {
     font-size: 25px;
 }
 
@@ -43,9 +120,9 @@ footer div ul > .padding-bottom-50 {
 }
 
 .end:hover {
-    color: red;
+    color: $celestial-blue;
 }
 
 footer div ul li:hover {
-    color: red;
+    color: $celestial-blue;
 }
